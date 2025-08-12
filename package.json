@@ -1,0 +1,28 @@
+{
+  "name": "gastronovi-backend",
+  "version": "1.0.0",
+  "description": "Backend for the Gastronovi project",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "build": "tsc",
+    "dev": "ts-node-dev src/app.ts"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^4.21.2",
+    "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.6",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.2.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.9.5"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "keywords": []
+}
