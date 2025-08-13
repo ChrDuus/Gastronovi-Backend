@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import Product from '../models/productModel';
 
 class ProductController {
     public async getProducts(req: Request, res: Response): Promise<void> {
