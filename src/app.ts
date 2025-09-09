@@ -1,9 +1,12 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import routes from './routes/index';
+import routes from './routes/product.routes';
 import mongoose from 'mongoose';
+import cors from 'cors'
+
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
@@ -11,8 +14,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', routes); // <-- Hier wird der Router eingebunden
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+
+app.get('/api/hello', (req, res) => {
+    res.json({ message: 'Hello from backend 🚀' });
 });
 
 
@@ -24,14 +28,18 @@ mongoose.connect('mongodb+srv://<duus359>:<bXiHZDFARxMn62At>@cluster0.mongodb.ne
 // const uri = "mongodb+srv://duus359:bXiHZDFARxMn62At@cluster0.qdwxik7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 // const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
 // async function run() {
-//   try {
-//     // Create a Mongoose client with a MongoClientOptions object to set the Stable API version
-//     await mongoose.connect(uri, clientOptions);
+    //   try {
+        //     // Create a Mongoose client with a MongoClientOptions object to set the Stable API version
+        //     await mongoose.connect(uri, clientOptions);
 //     await mongoose.connection.db.admin().command({ ping: 1 });
 //     console.log("Pinged your deployment. You successfully connected to MongoDB!");
 //   } finally {
-//     // Ensures that the client will close when you finish/error
-//     await mongoose.disconnect();
-//   }
-// }
-// run().catch(console.dir);
+    //     // Ensures that the client will close when you finish/error
+    //     await mongoose.disconnect();
+    //   }
+    // }
+    // run().catch(console.dir);
+    
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
