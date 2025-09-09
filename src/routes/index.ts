@@ -1,11 +1,12 @@
 import { Router } from 'express';
-import { YourController } from '../controllers/index';
+import  ProductController  from '../controllers/productController';
 
 const router = Router();
 
-router.get('/restaurants', YourController.getRestaurants);
-router.get('/menu-items', YourController.getMenuItems);
-router.post('/restaurants', YourController.createRestaurant);
-router.post('/menu-items', YourController.createMenuItem);
+router.get('/products', ProductController.getProducts);
+router.get('/menu-items', ProductController.getProductById);
+router.post('/restaurants', ProductController.createProduct);
+
+
 
 export default router;
